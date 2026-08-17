@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+/* ============================================================
+   COLUCCI & SMALL WEB SOLUTIONS
+
+   A business card, not a brochure. Letterhead, what we do,
+   who we are, how to reach us. Nothing else earns its place.
+
+   Look: conservative professionalism. Times New Roman throughout,
+   near-black on paper, one deep navy, thin rules doing the dividing.
+   No gloss, no gradients, no shadows, no rounded corners.
+
+   Words: plain. This is a web shop, not a law firm.
+   ============================================================ */
+
+@theme {
+  --color-ink: #14181f;
+  --color-ink-soft: #333a48; /* darkened from #4a5260: 7.5:1 -> 11.4:1 vs paper */
+  --color-paper: #fbfaf7;
+
+  --color-navy: #1a2b4a;
+  --color-navy-light: #33456b;
+
+  --color-rule: #c9c6be;
+  --color-rule-soft: #e3e0d8;
+
+  --font-serif: "Times New Roman", Times, Georgia, serif;
+}
+
+html {
+  font-family: var(--font-serif);
+}
+
+/* ---------- The name ----------
+   Stacked on two lines with tight leading so the two lines read as
+   one typographic mark rather than two adjacent words. */
+
+.firm-name {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  line-height: 0.94;
+  color: var(--color-navy);
+  font-size: clamp(3rem, 12vw, 6.5rem);
+}
+
+.firm-name .line {
+  display: block;
+}
+
+/* An italic ampersand is the oldest trick in partnership typography.
+   It sits optically large, so it is pulled back a touch. */
+.firm-name .amp {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.92em;
+  padding-right: 0.06em;
+}
+
+.firm-sub {
+  text-transform: uppercase;
+  /* Flat 16px, not viewport-scaled — the old clamp(0.7rem, 1.9vw, 0.95rem)
+     shrank on narrow screens instead of holding steady, bottoming out at
+     11.2px on every common phone width. Tracking eased from 0.34em: that
+     wide a spread works against reading "WEB SOLUTIONS" as two words
+     rather than ten separated letters. */
+  letter-spacing: 0.18em;
+  font-size: 1rem;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Rules ---------- */
+
+.rule-double {
+  border: 0;
+  border-top: 3px solid var(--color-navy);
+  border-bottom: 1px solid var(--color-navy);
+  height: 4px;
+}
+
+/* ---------- Navigation ---------- */
+
+.navbar a {
+  display: inline-block;
+  padding: 0.6rem 1.1rem 0.6rem 0;
+  margin-right: 1.4rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  text-decoration: none;
+}
+.navbar a:hover,
+.navbar a:focus-visible {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Headings ---------- */
+
+.section-head {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-navy);
+  margin-bottom: 1rem;
+}
+
+/* ---------- Buttons: a solid rectangle. Nothing more. ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  background: var(--color-navy);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid var(--color-navy);
+}
+.btn:hover {
+  background: var(--color-navy-light);
+}
+
+/* ---------- Lists ---------- */
+
+.marklist li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+.marklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--color-navy);
+}
+
+/* ---------- Links ---------- */
+
+.prose-links a {
+  color: var(--color-navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-links a:hover {
+  color: var(--color-ink);
+}
+/* .btn already sets color:#fff, but plain .prose-links a (0,1,1) is more
+   specific than plain .btn (0,1,0) and was repainting it navy — navy text
+   on a navy button, effectively invisible. Restated here at (0,2,1) to win. */
+.prose-links a.btn {
+  color: #fff;
+  text-decoration: none;
+}
+.prose-links a.nounder,
+.prose-links .navbar a {
+  text-decoration: none;
+}
+
+/* ---------- Work tabs ----------
+   A sub-level control, not a second .section-head — it needs to
+   read as nested *inside* "Our work", not as a peer heading next
+   to it. Two cues do that: a left rule indenting the whole tabs
+   block (same trick as a nested list), and a smaller, less-tracked
+   label than .section-head's 0.8125rem/0.2em so the type scale
+   itself implies rank. Markup ships as headed lists; work-tabs.js
+   swaps the headings for this bar only once it's confirmed it can
+   run. */
+
+#work-tabs {
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--color-rule-soft);
+}
+
+.work-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.75rem;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.work-tab {
+  margin-bottom: -1px;
+  padding: 0.4rem 0 0.6rem;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+}
+.work-tab:hover {
+  color: var(--color-navy);
+}
+.work-tab[aria-selected="true"] {
+  border-bottom-color: var(--color-navy);
+  color: var(--color-navy);
+}
+
+/* ---------- Accessibility ---------- */
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 3px solid var(--color-navy);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

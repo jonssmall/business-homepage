@@ -1,0 +1,20 @@
+{
+  "name": "business-homepage",
+  "version": "0.1.0",
+  "description": "Marketing site for [Business Name] — web development services.",
+  "private": true,
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./css/style.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "serve": "python3 -m http.server 4321",
+    "start": "npm run build && npm run serve"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

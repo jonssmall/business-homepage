@@ -1,0 +1,368 @@
+<!doctype html>
+<!--
+  Colucci & Small Web Solutions
+
+  A business card, not a brochure. Letterhead, what we do, who we are,
+  how to reach us. Nothing else earns its place.
+
+  Look: conservative professionalism — Times New Roman throughout,
+  near-black on paper, one deep navy, thin rules doing the dividing.
+  No gloss, no gradients, no shadows, no rounded corners.
+
+  Words: plain. This is a web shop, not a law firm.
+
+  Audience: business owners old enough to distrust a flashy young
+  agency. The formality does the reassuring; the copy does the selling.
+  Hence named partners with photographs and clear contact details
+  before any scrolling.
+
+  [Square brackets] are placeholders. The "What we do" items are real
+  draft copy — edit or delete freely, they are suggestions not gospel.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Colucci &amp; Small Web Solutions — websites and IT support in [town]</title>
+    <meta
+      name="description"
+      content="[Under 155 characters: what you build, who for, and where. Include your town — local intent is most of your search traffic.]"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Colucci &amp; Small Web Solutions" />
+    <meta property="og:description" content="[Same one-liner as above.]" />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="prose-links bg-paper text-[18px] leading-relaxed text-ink">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:font-bold"
+    >
+      Skip to content
+    </a>
+
+    <!-- ================= LETTERHEAD ================= -->
+    <header class="border-b border-rule bg-white">
+      <div class="mx-auto max-w-4xl px-5 pt-10 pb-5 sm:pt-14">
+        <h1 class="firm-name">
+          <span class="line">Colucci</span>
+          <span class="line"><span class="amp">&amp;</span> Small</span>
+        </h1>
+
+        <!-- Paired with the subtitle, not the wordmark — a huge h1 plus a
+             button was too wide to stay on one row at narrow widths.
+             "Web Solutions" is short enough that this row holds even on
+             small phones; flex-wrap only kicks in as a safety net. -->
+        <div class="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+          <p class="firm-sub">Web Solutions</p>
+          <a class="btn shrink-0" href="mailto:[enquiries@colucciandsmall.com]">Email us</a>
+        </div>
+
+        <hr class="rule-double mt-6" />
+
+        <p class="mt-4 max-w-2xl text-[16px] text-ink-soft">
+          Over a decade of experience helping small businesses get online, get found, and stay running.
+        </p>
+      </div>
+
+      <nav class="navbar border-t border-rule-soft" aria-label="Primary">
+        <!-- Real grid columns below sm: — the four links no longer wrap by
+             inline-flow (where row 2's start position depends on how wide
+             row 1's items happened to be), they sit in two fixed-width
+             columns so "Contact" lines up directly under "Our work".
+             sm:block reverts to the original packed inline-block row,
+             unchanged from before, once there's room for one line. -->
+        <div class="mx-auto grid max-w-4xl grid-cols-2 px-5 sm:block">
+          <a href="#services">What we do</a>
+          <a href="#work">Our work</a>
+          <a href="#about">About us</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="mx-auto max-w-4xl px-5 py-9">
+      <!-- ---------- WHAT WE DO ----------
+           Three cards, each a plain bordered box — no shadow, no
+           rounded corners, matching the rest of the site. Icons are
+           hand-drawn line glyphs (stroke=currentColor, no fill) so
+           they render in navy on every device rather than risking a
+           colour emoji on mobile. Decorative — aria-hidden, since the
+           adjacent heading already says what each one is. -->
+      <section id="services">
+        <h2 class="section-head">What we do</h2>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="border border-rule bg-white p-6">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-9 w-9 text-navy" aria-hidden="true">
+              <rect x="2.5" y="4.5" width="19" height="15" />
+              <line x1="2.5" y1="8.5" x2="21.5" y2="8.5" />
+            </svg>
+            <h3 class="mt-4 text-lg font-bold text-navy">Websites</h3>
+            <p class="mt-2 text-[16px] text-ink-soft">
+              New builds, redesigns and repairs — responsive on desktop,
+              tablet and phone.
+            </p>
+          </div>
+
+          <div class="border border-rule bg-white p-6">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-9 w-9 text-navy" aria-hidden="true">
+              <path d="M6 8h12l-1 12H7L6 8z" />
+              <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+            </svg>
+            <h3 class="mt-4 text-lg font-bold text-navy">Online Shops</h3>
+            <p class="mt-2 text-[16px] text-ink-soft">
+              Full e-commerce sites with secure payment integration built
+              in.
+            </p>
+          </div>
+
+          <div class="border border-rule bg-white p-6">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-9 w-9 text-navy" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <path d="M12 3c3 3.5 3 14.5 0 18" />
+              <path d="M12 3c-3 3.5-3 14.5 0 18" />
+            </svg>
+            <h3 class="mt-4 text-lg font-bold text-navy">Hosting &amp; Visibility</h3>
+            <p class="mt-2 text-[16px] text-ink-soft">
+              Domains, business email and hosting, plus getting your
+              business found on Google.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- OUR WORK ----------
+           Real links to live sites you've built. Delete this whole
+           section until there are at least two real examples — an
+           empty portfolio is worse than none. -->
+      <section id="work" class="mt-10">
+        <h2 class="section-head">Our work</h2>
+
+        <!-- Headed lists by default, one per category. A small script below
+             progressively enhances them into a tablist — if it fails to load,
+             every category still reads fine stacked, headings and all. -->
+        <div id="work-tabs">
+          <div class="work-group">
+            <h3 class="text-lg font-bold text-navy">Government</h3>
+            <ul class="mt-4 space-y-6">
+              <li class="flex flex-wrap items-start gap-4 sm:flex-nowrap">
+                <a
+                  href="https://jonssmall.github.io/john-fisher/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex flex-wrap items-start gap-4 sm:flex-nowrap"
+                >
+                  <img
+                    src="assets/work/john-fisher.jpg"
+                    alt=""
+                    width="480" height="360"
+                    loading="lazy"
+                    class="h-[90px] w-[120px] shrink-0 border border-rule bg-white object-cover object-top transition-colors group-hover:border-navy"
+                  />
+                  <span>
+                    John Fisher for Mayor Campaign<span class="sr-only"> (opens in a new tab)</span>
+                  </span>
+                </a>
+                <span class="text-ink-soft"> — Candidate platform, endorsements, volunteer and donation signup</span>
+              </li>
+              <li class="flex flex-wrap items-start gap-4 sm:flex-nowrap">
+                <a
+                  href="https://jonssmall.github.io/osprey-point/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex flex-wrap items-start gap-4 sm:flex-nowrap"
+                >
+                  <img
+                    src="assets/work/osprey-point.jpg"
+                    alt=""
+                    width="480" height="360"
+                    loading="lazy"
+                    class="h-[90px] w-[120px] shrink-0 border border-rule bg-white object-cover object-top transition-colors group-hover:border-navy"
+                  />
+                  <span>
+                    Town of Osprey Point<span class="sr-only"> (opens in a new tab)</span>
+                  </span>
+                </a>
+                <span class="text-ink-soft"> — Municipal services, bill payment, permit application</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="work-group mt-10">
+            <h3 class="text-lg font-bold text-navy">Commercial</h3>
+            <ul class="mt-4 space-y-6">
+              <li class="flex flex-wrap items-start gap-4 sm:flex-nowrap">
+                <a
+                  href="https://jonssmall.github.io/via-roma/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex flex-wrap items-start gap-4 sm:flex-nowrap"
+                >
+                  <img
+                    src="assets/work/via-roma.jpg"
+                    alt=""
+                    width="480" height="360"
+                    loading="lazy"
+                    class="h-[90px] w-[120px] shrink-0 border border-rule bg-white object-cover object-top transition-colors group-hover:border-navy"
+                  />
+                  <span>
+                    Via Roma<span class="sr-only"> (opens in a new tab)</span>
+                  </span>
+                </a>
+                <span class="text-ink-soft"> — Restaurant with menu, online ordering, reservation booking</span>
+              </li>
+              <li class="flex flex-wrap items-start gap-4 sm:flex-nowrap">
+                <a
+                  href="https://jonssmall.github.io/bayberry-portal/#/portal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex flex-wrap items-start gap-4 sm:flex-nowrap"
+                >
+                  <img
+                    src="assets/work/bayberry-portal.jpg"
+                    alt=""
+                    width="480" height="360"
+                    loading="lazy"
+                    class="h-[90px] w-[120px] shrink-0 border border-rule bg-white object-cover object-top transition-colors group-hover:border-navy"
+                  />
+                  <span>
+                    Bayberry Landscape Co.<span class="sr-only"> (opens in a new tab)</span>
+                  </span>
+                </a>
+                <span class="text-ink-soft"> — Customer portal and business owner dashboard</span>
+              </li>
+              <li class="flex flex-wrap items-start gap-4 sm:flex-nowrap">
+                <a
+                  href="https://jonssmall.github.io/customs-example/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex flex-wrap items-start gap-4 sm:flex-nowrap"
+                >
+                  <img
+                    src="assets/work/customs-example.jpg"
+                    alt=""
+                    width="480" height="360"
+                    loading="lazy"
+                    class="h-[90px] w-[120px] shrink-0 border border-rule bg-white object-cover object-top transition-colors group-hover:border-navy"
+                  />
+                  <span>
+                    Halyard Customs Brokerage<span class="sr-only"> (opens in a new tab)</span>
+                  </span>
+                </a>
+                <span class="text-ink-soft"> — Shipment tracking, quote requests</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="work-group mt-10">
+            <h3 class="text-lg font-bold text-navy">Other</h3>
+            <ul class="mt-4 space-y-6">
+              <li class="flex flex-wrap items-start gap-4 sm:flex-nowrap">
+                <a
+                  href="https://jonssmall.github.io/car-club/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex flex-wrap items-start gap-4 sm:flex-nowrap"
+                >
+                  <img
+                    src="assets/work/car-club.jpg"
+                    alt=""
+                    width="480" height="360"
+                    loading="lazy"
+                    class="h-[90px] w-[120px] shrink-0 border border-rule bg-white object-cover object-top transition-colors group-hover:border-navy"
+                  />
+                  <span>
+                    Osprey Point Classic Car Club<span class="sr-only"> (opens in a new tab)</span>
+                  </span>
+                </a>
+                <span class="text-ink-soft"> — Event calendar, member directory, photo archive, membership signup</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- ABOUT US ----------
+           Two named people with photographs is the strongest trust signal
+           available to this audience. Swap the placeholder blocks for real
+           headshots: plain background, business dress. -->
+      <section id="about" class="mt-10">
+        <h2 class="section-head">About us</h2>
+        <p class="max-w-2xl">
+          <strong>Colucci & Small</strong> is a web solutions firm focused on building practical, effective websites for businesses of all sizes. We combine years of technical experience with a personal, hands-on approach to deliver web solutions that work.
+        </p>
+
+        <div class="mt-6 grid gap-8 sm:grid-cols-2">
+          <div>
+            <div
+              class="flex h-44 items-center justify-center border border-rule bg-white text-[13px] tracking-[0.14em] uppercase text-ink-soft"
+            >
+              [Photograph]
+            </div>
+            <p class="mt-3 font-bold text-navy">Alex Colucci</p>
+            <p class="text-[16px] tracking-[0.1em] uppercase text-ink-soft">
+              Project Manager
+            </p>
+            <p class="mt-2 text-[16px]">
+              [Two sentences: what they handle, and one human detail that makes
+              them a person rather than a job title.]
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex h-44 items-center justify-center border border-rule bg-white text-[13px] tracking-[0.14em] uppercase text-ink-soft"
+            >
+              [Photograph]
+            </div>
+            <p class="mt-3 font-bold text-navy">Jon Small</p>
+            <p class="text-[16px] tracking-[0.1em] uppercase text-ink-soft">
+              Principal Developer
+            </p>
+            <p class="mt-2 text-[16px]">
+              With more than twelve years of experience in web solutions ranging from restaurants to the DoD, Jon tailors your unique needs to best-in-class industry standards.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="border-t border-rule bg-white">
+      <div class="mx-auto max-w-4xl px-5 py-9">
+        <h2 class="section-head">Contact</h2>
+
+        <div class="grid gap-8 sm:grid-cols-[1fr_auto] sm:items-start">
+          <div class="grid gap-6 sm:grid-cols-2">
+            <p>
+              <span class="text-[13px] tracking-[0.14em] uppercase text-ink-soft">
+                Email
+              </span><br />
+              <a class="text-xl font-bold text-navy" href="mailto:[enquiries@colucciandsmall.com]">
+                [enquiries@colucciandsmall.com]
+              </a>
+            </p>
+          </div>
+
+          <div class="sm:w-56">
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-rule">
+      <div
+        class="mx-auto flex max-w-4xl flex-wrap justify-between gap-3 px-5 py-5 text-[16px] text-ink-soft"
+      >
+        <p>&copy; 2026 Colucci &amp; Small Web Solutions.</p>
+      </div>
+    </footer>
+    <script src="assets/js/work-tabs.js" defer></script>
+  </body>
+</html>
